@@ -1,0 +1,246 @@
+<style>
+  .background-fijo {
+    background: url('https://primary.jwwb.nl/public/r/t/w/temp-wsimhefxzkvkzfwicpgl/fondo-high.png') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -10;
+  }
+
+  .logo-container {
+    text-align: center;
+    padding: 40px 10px 10px;
+  }
+
+  .logo-container img {
+    max-width: 400px;
+    width: 90%;
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.98; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .linea-separadora {
+    width: 80%;
+    height: 1.5px;
+    margin: 40px auto 30px auto;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  }
+
+  .titulo-central {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: white !important;
+    background: none !important; /* ✅ elimina fondo blanco Webador */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  }
+
+  /* ==== GALERÍA DE MINI TARJETAS ==== */
+  .galeria-mini {
+    display: flex;
+    flex-wrap: nowrap; /* ✅ siempre en una fila */
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 10px 40px;
+  }
+
+  .mini-tarjeta {
+    background: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    flex: 1 1 45%; /* ✅ 2 por fila en cel y PC */
+    max-width: 320px;
+    transition: transform 0.3s ease;
+  }
+
+  .mini-tarjeta:hover {
+    transform: scale(1.03);
+  }
+
+  .mini-tarjeta img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin-top: 8px;
+  }
+
+  .mini-tarjeta h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white !important;
+    background: none !important; /* ✅ evita fondo */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  }
+
+  .mini-tarjeta p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 8px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  }
+
+  .mini-tarjeta .clic-texto {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .flecha-css {
+    width: 16px;
+    height: 16px;
+    border-right: 4px solid;
+    border-bottom: 4px solid;
+    transform: rotate(45deg);
+    animation: flotar1 2.2s infinite ease-in-out, cambiarColor 3s infinite ease-in-out;
+    margin: 4px auto 8px;
+  }
+
+  .flecha-css.f2 {
+    animation: flotar2 2.7s infinite ease-in-out, cambiarColor 4s infinite ease-in-out;
+  }
+
+  @keyframes flotar1 {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(-5px); }
+  }
+
+  @keyframes flotar2 {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(-3px); }
+  }
+
+  @keyframes cambiarColor {
+    0% { border-color: white; }
+    25% { border-color: #1E90FF; }
+    50% { border-color: #0000CD; }
+    75% { border-color: #888888; }
+    100% { border-color: black; }
+  }
+
+  .clic-texto {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    margin-bottom: 8px;
+  }
+
+  .contacto-texto {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+    color: white !important;
+    background: none !important; /* ✅ evita fondo */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  }
+
+  .contenedor-enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0 50px;
+  }
+
+  .imagen-enlace {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .imagen-enlace img {
+    width: 40px;
+    margin-bottom: 5px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: transparent;
+    color: white;
+  }
+
+  /* ==== AJUSTES RESPONSIVE ==== */
+  @media (max-width: 600px) {
+    .mini-tarjeta {
+      flex: 1 1 45%;
+      max-width: 160px;
+      padding: 8px;
+    }
+
+    .mini-tarjeta h3 {
+      font-size: 16px !important;
+    }
+
+    .mini-tarjeta p {
+      font-size: 12px !important;
+    }
+
+    .mini-tarjeta img {
+      max-height: 120px;
+    }
+  }
+</style>
+
+<!-- Fondo -->
+<div class="background-fijo"></div>
+
+<!-- Logo -->
+<div class="logo-container">
+  <img src="https://primary.jwwb.nl/public/r/t/w/temp-wsimhefxzkvkzfwicpgl/logo-2025-high.png" alt="Logo Luixtec">
+</div>
+
+<!-- Línea separadora -->
+<div class="linea-separadora"></div>
+
+<!-- Título -->
+<div class="titulo-central">NUESTROS SERVICIOS</div>
+
+<!-- GALERÍA MINI -->
+<div class="galeria-mini">
+  <a href="https://www.luixtec.com/digitalizate" class="mini-tarjeta">
+    <h3>DIGITALÍZATE!</h3>
+    <p>Le damos prescencia digital a tu empresa</p>
+    <div class="clic-texto">clic aquí</div>
+    <div class="flecha-css"></div>
+    <img src="https://primary.jwwb.nl/public/r/t/w/temp-wsimhefxzkvkzfwicpgl/fej-vzhd0j.gif" alt="Digitalízate">
+  </a>
+
+  <a href="https://www.luixtec.com/invitaciones" class="mini-tarjeta">
+    <h3>INVITACIONES DIGITALES</h3>
+    <p>Invitaciones digitales interactivas diseñadas a la medida y personalizadas a tu gusto</p>
+    <div class="clic-texto">clic aquí</div>
+    <div class="flecha-css f2"></div>
+    <img src="https://primary.jwwb.nl/public/r/t/w/temp-wsimhefxzkvkzfwicpgl/invitaciones-cel.gif" alt="Invitaciones Digitales">
+  </a>
+</div>
+
+<!-- Contacto -->
+<div class="contacto-texto">contácto directo</div>
+
+<!-- Redes sociales -->
+<div class="contenedor-enlaces">
+  <a class="imagen-enlace" href="https://api.whatsapp.com/send?phone=526181029722">
+    <img src="https://primary.jwwb.nl/public/x/g/w/temp-saqqrmveoryrastofzrk/whatsapp-logo-high-oyqe15.png" alt="WhatsApp">
+    WhatsApp
+  </a>
+  <a class="imagen-enlace" href="https://www.facebook.com/Luixtec">
+    <img src="https://primary.jwwb.nl/public/x/g/w/temp-saqqrmveoryrastofzrk/facebook-logo-high-97ib49.png" alt="Facebook">
+    Facebook
+  </a>
+</div>
